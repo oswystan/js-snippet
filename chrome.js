@@ -10,6 +10,7 @@
  *********************************************************************************
  */
 
+const { logi } = require("./log");
 const spawn = require("child_process").spawn;
 const os = require("os");
 const program = {
@@ -26,7 +27,7 @@ class Chrome {
     go(url) {
         this.proc = spawn(this.app, [ "--new-window", url ]);
         this.proc.on("exit", (code) => {
-            console.log("exit with", code);
+            logi("exit with", code);
             this.proc = null;
         });
         return this;
