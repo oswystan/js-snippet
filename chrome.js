@@ -18,10 +18,16 @@
 const { logi } = require("./log");
 const spawn = require("child_process").spawn;
 const os = require("os");
+const killall = require("./killall");
 const program = {
     darwin: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
     linux: "google-chrome"
 };
+
+const procname = {
+    darwin: "Google Chrome",
+    linux: "chrome"
+}
 
 class Chrome {
     constructor() {
@@ -46,6 +52,10 @@ class Chrome {
         this.timer = setTimeout(()=>{
             this.kill();
         }, ms);
+        return this;
+    }
+    killall() {
+        killall(procname[os.platform()]);
         return this;
     }
 }
