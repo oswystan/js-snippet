@@ -13,7 +13,7 @@
 const exec = require("child_process").execSync;
 
 module.exports = function(proc) {
-    let cmd = `killall ${proc} || echo 'no such process'`;
+    let cmd = `killall '${proc}' || echo 'no such process'`;
     exec(cmd);
 }
 
