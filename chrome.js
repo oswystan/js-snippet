@@ -10,6 +10,11 @@
  *********************************************************************************
  */
 
+/*
+ * chrome options:
+ *    https://webrtc.org/testing/
+ *    https://peter.sh/experiments/chromium-command-line-switches/
+ */
 const { logi } = require("./log");
 const spawn = require("child_process").spawn;
 const os = require("os");
