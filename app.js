@@ -17,7 +17,7 @@ const chrome = require("./chrome");
 function main() {
     logi("app is starting...");
     let browser = new chrome();
-    browser.go("https://www.sogou.com").timeout(3000);
+    browser.go("https://www.sogou.com").timeout(120000);
 }
 
 main();

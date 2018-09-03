@@ -25,7 +25,7 @@ class Chrome {
         this.timer = -1;
     }
     go(url) {
-        this.proc = spawn(this.app, [ "--new-window", url ]);
+        this.proc = spawn(this.app, [ "--new-window", "--ignore-certificate-errors", "--use-fake-ui-for-media-stream", url ]);
         this.proc.on("exit", (code) => {
             logi("exit with", code);
             this.proc = null;
